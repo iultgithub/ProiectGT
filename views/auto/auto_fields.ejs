@@ -1,0 +1,31 @@
+<%- include('nrauto') %>
+<div class="form-group mb-2">
+    <label for="descriere">Description</label>
+    <textarea name="descriere" id="descriere" class="form-control">
+<%= auto.descriere %></textarea
+    >
+</div>
+<div class="form-group mb-2">
+    <label for="consum">Consum</label>
+    <input
+        required
+        value="<%= auto.consum %>"
+        min="0"
+        max="1000"
+        type="number"
+        name="consum"
+        id="consum"
+        class="form-control"
+    />
+</div>
+<div class="form-group mb-4">
+    <label for="type_descriere">Type</label>
+    <input
+        disabled
+        value="<%= type.descriere %>"
+        name="type_descriere"
+        id="type_descriere"
+        class="form-control"
+    />
+    <input hidden value="<%= type.id %>" name="type" />
+</div>

@@ -12,9 +12,10 @@
     <body>
         <div class="container w-50">
             <h1 class="mb-4">New Category</h1>
-            <form action="/categories" method="post" style="max-width: 500px">
-                <%- include('../_title_field') %> <%-
-                include('../_form_actions') %>
+            <form action="/types" method="post" style="max-width: 500px">
+                <%- include('auto_fields') %>
+                <a href="/" class="btn btn-secondary">Cancel</a>
+                <button type="submit" class="btn btn-primary">Save</button>
             </form>
         </div>
     </body>

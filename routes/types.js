@@ -28,7 +28,7 @@ router.get('/:id', async (req, res) => {
 
 router.get('/:id/edit', async (req, res) => {
     try {
-        const type = await type.findById(req.params.id);
+        const type = await Type.findById(req.params.id);
         if (type == null) res.redirect('/');
 
         res.render('types/edit-type', {
@@ -47,7 +47,7 @@ router.post('/', async (req, res) => {
     });
 
     try {
-        type = await type.save();
+        type = await Type.save();
         res.redirect(`/types/${type.id}`);
     } catch (e) {
         console.error(e);
@@ -60,7 +60,7 @@ router.post('/', async (req, res) => {
 
 router.put('/:id', async (req, res) => {
     try {
-        await type.findOneAndUpdate(
+        await Type.findOneAndUpdate(
             { _id: req.params.id },
             { title: req.body.title },
         );
@@ -76,7 +76,7 @@ router.put('/:id', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
     try {
-        const type = await type.findById(req.params.id);
+        const type = await Type.findById(req.params.id);
         await auto.deleteMany({ type: type.id });
         await type.deleteOne(type);
         res.redirect('/');

@@ -11,10 +11,11 @@
     </head>
     <body>
         <div class="container w-50">
-            <h1 class="mb-4">New Game</h1>
+            <h1 class="mb-4">New AUTO</h1>
             <form action="/autoroute" method="post" style="max-width: 500px">
-                <%- include('../_auto_form_fields') %> <%-
-                include('../_form_actions') %>
+                <%- include('auto_fields') %>
+                <a href="/" class="btn btn-secondary">Cancel</a>
+                <button type="submit" class="btn btn-primary">Save</button>
             </form>
         </div>
     </body>

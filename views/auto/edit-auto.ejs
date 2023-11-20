@@ -11,14 +11,15 @@
     </head>
     <body>
         <div class="container w-50">
-            <h1 class="mb-4">Un nou Auto</h1>
+            <h1 class="mb-4">Edit Auto</h1>
             <form
                 action="/autoroute/<%= auto.id %>?_method=PUT"
                 method="post"
                 style="max-width: 500px"
             >
-                <%- include('../_auto_form_fields') %> <%-
-                include('../_form_actions') %>
+            <%- include('auto_fields') %>
+            <a href="/" class="btn btn-secondary">Cancel</a>
+            <button type="submit" class="btn btn-primary">Save</button>
             </form>
         </div>
     </body>

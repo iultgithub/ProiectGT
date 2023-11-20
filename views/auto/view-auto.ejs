@@ -11,7 +11,11 @@
     </head>
     <body>
         <div class="container w-50">
-            <h1 class="mb-2"><%= auto.number %></h1>
+            <h1 class="mb-2"><%= auto.nrauto %></h1>
+            <div class="card-subtitle text-muted mb-2 mt-2">
+                <%= auto.nrauto %> $
+            </div>
+            <div class="mb-2"><%= auto.consum%></div>
             <a href="/autoroute/<%= auto.id %>/edit" class="btn btn-info"
                 >Edit Auto</a
             >
@@ -26,10 +30,7 @@
                 </button>
             </form>
             <a href="/" class="btn btn-secondary">Go Back</a>
-            <div class="card-subtitle text-muted mb-2 mt-2">
-                <%= type.title %> - <%= auto.number %> $
-            </div>
-            <div class="mb-2"><%= auto.consum%></div>
+
         </div>
     </body>
 </html>
